@@ -1,0 +1,19 @@
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav ul a {
+  color: black;
+  transition: 0.2s;
+}
+
+.nav ul a:hover {
+  color: #555;
+}
+
+.nav ul li {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 15px;
+}

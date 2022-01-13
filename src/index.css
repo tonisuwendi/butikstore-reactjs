@@ -13,3 +13,42 @@ html {
 a {
   text-decoration: none;
 }
+
+.banner-component:hover .swiper-button-prev,
+.banner-component:hover .swiper-button-next {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.banner-component .swiper-button-prev {
+  transform: translate(-100px, 0);
+  left: 3%;
+}
+
+.banner-component .swiper-button-next {
+  transform: translate(100px, 0);
+  right: 3%;
+}
+
+.banner-component .swiper-button-prev,
+.banner-component .swiper-button-next {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 2px 1px 16px rgba(0, 0, 0, 0.1);
+  height: 45px;
+  opacity: 0;
+  transition: 0.3s;
+  width: 45px;
+}
+
+.banner-component .swiper-button-prev::after,
+.banner-component .swiper-button-next::after {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.banner-component .swiper-button-prev:hover,
+.banner-component .swiper-button-next:hover {
+  transform: scale(1.2);
+}

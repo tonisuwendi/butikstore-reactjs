@@ -1,0 +1,21 @@
+.banner {
+  display: flex;
+  gap: 30px;
+  margin: 30px auto;
+  width: 1250px;
+}
+
+.item {
+  overflow: hidden;
+  height: 290px;
+}
+
+.item:hover img {
+  filter: brightness(0.7);
+  transform: scale(1.1);
+}
+
+.item img {
+  transition: 1s;
+  width: 100%;
+}

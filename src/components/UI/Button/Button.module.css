@@ -19,3 +19,11 @@
   line-height: 32px;
   padding: 0px 18px;
 }
+
+.button_lg {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 47px;
+  padding: 0 35px;
+  letter-spacing: 2px;
+}

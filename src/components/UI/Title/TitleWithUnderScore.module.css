@@ -1,0 +1,14 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title h3 {
+  color: #222;
+  border-bottom: 2px solid #222;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 15px;
+  letter-spacing: 2px;
+}

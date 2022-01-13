@@ -1,11 +1,10 @@
-import Banner from "./components/Banner/Banner";
-import Header from "./components/Header/Header";
+import HomePage from "./pages/Home";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Banner />
+      <HomePage />
+      <div style={{ height: 500 }}></div>
     </>
   );
 };

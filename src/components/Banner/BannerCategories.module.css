@@ -1,13 +1,12 @@
 .banner {
   display: flex;
-  gap: 30px;
-  margin: 30px auto;
-  width: 1250px;
+  margin: 30px 0;
+  width: 100%;
 }
 
 .item {
+  margin: 0 15px;
   overflow: hidden;
-  height: 290px;
 }
 
 .item:hover img {
@@ -16,6 +15,8 @@
 }
 
 .item img {
+  height: 100%;
+  object-fit: cover;
   transition: 1s;
   width: 100%;
 }

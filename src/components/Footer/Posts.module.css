@@ -1,0 +1,20 @@
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.images a {
+  line-height: 0;
+}
+
+.images img {
+  height: 90px;
+  margin: 2px;
+  object-fit: cover;
+  transition: 0.3s;
+  width: 90px;
+}
+
+.images img:hover {
+  filter: brightness(0.9);
+}

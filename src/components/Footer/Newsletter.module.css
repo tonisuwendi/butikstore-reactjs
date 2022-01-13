@@ -1,0 +1,10 @@
+.newsletter input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 12px;
+  outline: none;
+  padding: 15px 0;
+  width: 100%;
+}

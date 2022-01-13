@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaEye } from "react-icons/fa";
 
 import ProductImage from "./ProductImage";
 import classes from "./ProductItem.module.css";
@@ -35,7 +36,9 @@ const ProductItem = ({ slug, title, price, image, imageHover }) => {
             productIsHover={productIsHover}
           />
           <div className={detailStyles.join(" ")}>
-            <p>DETAIL</p>
+            <p>
+              <FaEye /> DETAIL
+            </p>
           </div>
         </div>
         <div className={classes.description}>

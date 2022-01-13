@@ -1,0 +1,10 @@
+.socmed a {
+  color: #333;
+  font-size: 27px;
+  margin-right: 18px;
+  transition: 0.2s;
+}
+
+.socmed a:hover {
+  color: #555;
+}

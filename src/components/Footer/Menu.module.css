@@ -1,0 +1,14 @@
+.menus li {
+  font-size: 14px;
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+.menus a {
+  color: #777;
+  transition: .2s;
+}
+
+.menus a:hover {
+  color: #333;
+}

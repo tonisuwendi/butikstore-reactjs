@@ -1,6 +1,6 @@
-import classes from "./TitleWithUnderScore.module.css";
+import classes from "./TitleWithUnderline.module.css";
 
-const TitleWithUnderScore = ({ title, mt = 70, mb = 40 }) => {
+const TitleWithUnderline = ({ title, mt = 70, mb = 40 }) => {
   return (
     <div
       className={classes.title}
@@ -11,4 +11,4 @@ const TitleWithUnderScore = ({ title, mt = 70, mb = 40 }) => {
   );
 };
 
-export default TitleWithUnderScore;
+export default TitleWithUnderline;

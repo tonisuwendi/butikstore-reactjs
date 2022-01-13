@@ -40,6 +40,13 @@
   text-align: center;
 }
 
+.detail svg {
+  font-size: 18px;
+  margin-right: 3px;
+  position: relative;
+  top: 4px;
+}
+
 .description {
   padding: 20px 0;
   text-align: center;

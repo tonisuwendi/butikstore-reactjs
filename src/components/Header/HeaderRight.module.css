@@ -1,4 +1,17 @@
 .headerright {
   align-items: center;
   display: flex;
+  gap: 20px;
+}
+
+.headerright span {
+  cursor: pointer;
+  border-left: 1px solid #ddd;
+  font-size: 22px;
+  padding-left: 15px;
+  line-height: 15px;
+}
+
+.headerright span:hover {
+  color: #444;
 }

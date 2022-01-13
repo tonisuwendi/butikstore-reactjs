@@ -1,33 +1,32 @@
 import Banner from "../../components/Banner/Banner";
-import Header from "../../components/Header/Header";
-import TitleWithUnderScore from "../../components/UI/Title/TitleWithUnderScore";
+import TitleWithUnderline from "../../components/UI/Title/TitleWithUnderline";
 import ProductList from "../../components/Products/ProductList";
 
 import { bestSeller, newArrivals } from "../../data/product";
 
 import classes from "./Home.module.css";
 import Button from "../../components/UI/Button/Button";
+import Layout from "../../components/Layout/Default";
 
 const HomePage = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <main>
         <Banner />
         <section className={classes.products}>
-          <TitleWithUnderScore title="BEST SELLERS" />
+          <TitleWithUnderline title="BEST SELLERS" />
           <ProductList products={bestSeller} />
           <div className={classes.button_see_more}>
             <Button title="SEE MORE" size="lg" />
           </div>
-          <TitleWithUnderScore title="NEW ARRIVALS" />
+          <TitleWithUnderline title="NEW ARRIVALS" />
           <ProductList products={newArrivals} columns={5} />
           <div className={classes.button_see_more}>
             <Button title="SEE MORE" size="lg" />
           </div>
         </section>
       </main>
-    </>
+    </Layout>
   );
 };
 

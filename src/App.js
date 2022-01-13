@@ -1,11 +1,6 @@
-import HomePage from "./pages/Home";
+import HomePage from "./pages/Home/Home";
 
 const App = () => {
-  return (
-    <>
-      <HomePage />
-      <div style={{ height: 500 }}></div>
-    </>
-  );
+  return <HomePage />;
 };
 export default App;

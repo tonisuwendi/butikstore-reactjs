@@ -10,12 +10,19 @@ export const bannerSwiper = [
     id: "b2",
     title: "Banner 2",
     image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/SLIDE-BANNER-VOL.-21_DEKSTOP-2.jpg",
+      "https://lookboutiquestore.com/wp-content/uploads/2022/01/SLIDE-BANNER-CNY_DEKSTOP.jpg",
     url: "",
   },
   {
     id: "b3",
     title: "Banner 3",
+    image:
+      "https://lookboutiquestore.com/wp-content/uploads/2021/12/SLIDE-BANNER-VOL.-21_DEKSTOP-2.jpg",
+    url: "",
+  },
+  {
+    id: "b4",
+    title: "Banner 4",
     image:
       "https://lookboutiquestore.com/wp-content/uploads/2021/12/SLIDE-BANNER-GIFT-CARD-2021-DEKSTOP.jpg",
     url: "",

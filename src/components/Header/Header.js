@@ -1,8 +1,11 @@
-import classes from "./Header.module.css";
+import { memo } from "react";
+
 import HeaderLeft from "./HeaderLeft";
 import HeaderRight from "./HeaderRight";
 
-const Header = () => {
+import classes from "./Header.module.css";
+
+const Header = memo(() => {
   return (
     <header className={classes.header}>
       <div className={classes.header__top}>
@@ -16,6 +19,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

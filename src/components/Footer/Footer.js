@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import Benefit from "./Benefit";
 import Newsletter from "./Newsletter";
 import SocialMedia from "./SocialMedia";
@@ -9,7 +11,7 @@ import { informations, helps } from "../../data/footer";
 
 import classes from "./Footer.module.css";
 
-const Footer = () => {
+const Footer = memo(() => {
   return (
     <footer className={classes.footer}>
       <Benefit />
@@ -26,6 +28,6 @@ const Footer = () => {
       <Copyright />
     </footer>
   );
-};
+});
 
 export default Footer;

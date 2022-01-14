@@ -15,7 +15,7 @@ const BannerSwiper = () => {
       <Swiper
         navigation
         loop
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
       >
         {bannerSwiper.map((banner) => (
           <SwiperSlide key={banner.id}>

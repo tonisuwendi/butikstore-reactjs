@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 import ProductItem from "./ProductItem";
 
 import classes from "./ProductList.module.css";
 
-const ProductList = ({ products, columns = 6 }) => {
+const ProductList = memo(({ products, columns = 6 }) => {
   return (
     <div
       className={`${classes.products}`}
@@ -12,14 +14,13 @@ const ProductList = ({ products, columns = 6 }) => {
         <ProductItem
           key={product.id}
           slug={product.slug}
-          image={product.image}
-          imageHover={product.image_hover}
+          images={product.images}
           title={product.title}
           price={product.price}
         />
       ))}
     </div>
   );
-};
+});
 
 export default ProductList;

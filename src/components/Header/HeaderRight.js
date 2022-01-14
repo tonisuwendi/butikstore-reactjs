@@ -1,14 +1,22 @@
+import { useContext, memo } from "react";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
 
+import UIContext from "../../store/UI/ui-context";
 import Button from "../UI/Button/Button";
 
 import classes from "./HeaderRight.module.css";
 
-const HeaderRight = () => {
+const HeaderRight = memo(() => {
+  const uiCtx = useContext(UIContext);
+
+  const toggleSearchHandler = () => {
+    uiCtx.toggleSearch();
+  };
+
   return (
     <div className={classes.headerright}>
       <Button title="LOGIN / REGISTER" size="sm" />
-      <span>
+      <span onClick={toggleSearchHandler}>
         <IoSearchOutline />
       </span>
       <span>
@@ -16,6 +24,6 @@ const HeaderRight = () => {
       </span>
     </div>
   );
-};
+});
 
 export default HeaderRight;

@@ -1,6 +1,7 @@
+import { memo } from "react";
 import classes from "./TitleWithUnderline.module.css";
 
-const TitleWithUnderline = ({ title, mt = 70, mb = 40 }) => {
+const TitleWithUnderline = memo(({ title, mt = 70, mb = 40 }) => {
   return (
     <div
       className={classes.title}
@@ -9,6 +10,6 @@ const TitleWithUnderline = ({ title, mt = 70, mb = 40 }) => {
       <h3>{title}</h3>
     </div>
   );
-};
+});
 
 export default TitleWithUnderline;

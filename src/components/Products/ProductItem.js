@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { FaEye } from "react-icons/fa";
 
 import ProductImage from "./ProductImage";
 import classes from "./ProductItem.module.css";
 
-const ProductItem = ({ slug, title, price, image, imageHover }) => {
+const ProductItem = memo(({ slug, title, price, images }) => {
   const [productIsHover, setProductIsHover] = useState(false);
 
   const priceFormat = new Intl.NumberFormat("id-ID").format(price);
@@ -31,8 +31,8 @@ const ProductItem = ({ slug, title, price, image, imageHover }) => {
       <a href={slug}>
         <div className={classes.thumbnail}>
           <ProductImage
-            image={image}
-            imageHover={imageHover}
+            image={images[0]}
+            imageHover={images[1] || images[0]}
             productIsHover={productIsHover}
           />
           <div className={detailStyles.join(" ")}>
@@ -48,6 +48,6 @@ const ProductItem = ({ slug, title, price, image, imageHover }) => {
       </a>
     </div>
   );
-};
+});
 
 export default ProductItem;

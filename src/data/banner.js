@@ -42,7 +42,7 @@ export const bannerCategories = [
     title: "EVERYONE'S FAVES",
     image:
       "https://lookboutiquestore.com/wp-content/uploads/2022/01/BANNER-4-SALE-EVERYONE-FAVE.jpg",
-    url: "product-cat/best-seller",
+    url: "product-cat/best-sellers",
   },
   {
     id: "b3",

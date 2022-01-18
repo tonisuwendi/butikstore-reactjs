@@ -6,3 +6,7 @@
 .headerleft img {
   margin-right: 20px;
 }
+
+.headerleft a {
+  line-height: 0;
+}

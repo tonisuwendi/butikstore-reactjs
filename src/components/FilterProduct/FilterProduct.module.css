@@ -1,0 +1,32 @@
+.filter {
+  width: 100%;
+}
+
+.filter h3 {
+  color: #333;
+  border-bottom: 1px solid #eee;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.filter ul {
+  margin: 10px 0 40px 0;
+  list-style-type: none;
+}
+
+.filter li {
+  margin: 5px 0;
+}
+
+.filterNotActive {
+  color: #888;
+  font-size: 14px;
+}
+
+.filterActive {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}

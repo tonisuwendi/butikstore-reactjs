@@ -5,6 +5,7 @@ import useHttp from "../../hooks/use-http";
 import Layout from "../../components/Layout/Default";
 import classes from "./Home.module.css";
 import ProductContent from "../../components/Products/ProductContent";
+import endpoints from "../../lib/endpoints";
 
 const HomePage = memo(() => {
   const {
@@ -22,11 +23,12 @@ const HomePage = memo(() => {
 
   useEffect(() => {
     sendRequestBest({
-      url: "http://localhost:5000/products/best-seller?limit=6",
+      url: `${endpoints.getBestSellers()}?limit=6`,
     });
     sendRequestNew({
-      url: "http://localhost:5000/products/new-arrivals?limit=5",
+      url: `${endpoints.getNewArrivals()}?limit=5`,
     });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [sendRequestBest, sendRequestNew]);
 
   return (
@@ -39,6 +41,7 @@ const HomePage = memo(() => {
             loading={bestSellerLoading}
             products={bestSeller.products}
             error={errorBestSeller}
+            seeMore="/product-cat/best-sellers"
           />
           <ProductContent
             title="NEW ARRIVALS"
@@ -46,6 +49,7 @@ const HomePage = memo(() => {
             products={newArrivals.products}
             columns={5}
             error={errorNewArrivals}
+            seeMore="/product-cat/new-arrivals"
           />
         </section>
       </main>

@@ -1,115 +1,67 @@
-export const bestSeller = [
+export const productFilter = [
   {
-    id: "p1",
-    slug: "p/product-1",
-    title: "JEAN TWEED CROP TOP",
-    price: 269000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOOK-JEAN-TWEED-CROP-TOP-BLACK-570x854.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-JEAN-TWEED-TOP-BLACK-1-570x855.jpg",
+    id: "f1",
+    title: "Shop By",
+    menus: [
+      {
+        id: "m1",
+        title: "NEW ARRIVALS",
+        url: "/product-cat/new-arrivals",
+      },
+      {
+        id: "m2",
+        title: "BEST SELLERS",
+        url: "/product-cat/best-sellers",
+      },
+      {
+        id: "m3",
+        title: "SHOP ALL",
+        url: "/shop-all",
+      },
+    ],
   },
   {
-    id: "p2",
-    slug: "p/product-2",
-    title: "GAURI TWEED SKORT BLACK",
-    price: 259000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-GAURI-TWEED-SKORT-BLACK-1-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-GAURI-TWEED-SKORT-BLACK-2-570x855.jpg",
-  },
-  {
-    id: "p3",
-    slug: "p/product-3",
-    title: "ORLAN TWEED TOP BEIGE",
-    price: 279000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-ORLAN-TWEED-TOP-BEIGE-1-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-ORLAN-TWEED-TOP-BEIGE-2-570x855.jpg",
-  },
-  {
-    id: "p4",
-    slug: "p/product-4",
-    title: "JADEN TWEED SHORT PANTS",
-    price: 249000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-JADEN-TWEED-SHORT-PANTS-BEIGE-1-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-JADEN-TWEED-SHORT-PANTS-BEIGE-2-570x855.jpg",
-  },
-  {
-    id: "p5",
-    slug: "p/product-5",
-    title: "JEAN TWEED CROP TOP BEIGE",
-    price: 269000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOOK-JEAN-TWEED-CROP-TOP-BEIGE-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-JEAN-TWEED-TOP-BEIGE-1-570x855.jpg",
-  },
-  {
-    id: "p6",
-    slug: "p/product-6",
-    title: "GAURI TWEED BEIGE",
-    price: 259000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-GAURI-TWEED-SKORT-BEIGE-1-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-GAURI-TWEED-SKORT-BEIGE-2-570x855.jpg",
+    id: "f2",
+    title: "Sort By",
+    menus: [
+      {
+        id: "m1",
+        title: "POPULARITY",
+        url: "?sort=popularity",
+      },
+      {
+        id: "m2",
+        title: "PRICE: LOW TO HIGH",
+        url: "?sort=price01",
+      },
+      {
+        id: "m3",
+        title: "PRICE: HIGH TO LOW",
+        url: "?sort=price10",
+      },
+      {
+        id: "m4",
+        title: "PRODUCT NAME",
+        url: "?sort=name",
+      },
+    ],
   },
 ];
 
-export const newArrivals = [
+export const breadcrumbProductCat = [
   {
-    id: "p1",
-    slug: "p/product-1",
-    title: "CERYL TWEED BLAZER BEIGE",
-    price: 519000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2022/01/LOOKBOOK-CERYL-TWEED-BLAZER-BEIGE-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2022/01/LOOKBOUTIQUESTORE-CERYL-TWEED-BLAZER-BEIGE-1-570x855.jpg",
+    url: "/",
+    title: "HOME",
   },
   {
-    id: "p2",
-    slug: "p/product-2",
-    title: "DENVER TWEED PANTS BEIGE",
-    price: 299000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2022/01/LOOKBOUTIQUESTORE-DENVER-PANTS-BEIGE-1-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2022/01/LOOKBOUTIQUESTORE-DENVER-PANTS-BEIGE-2-570x855.jpg",
+    url: "/shop-all",
+    title: "SHOP",
   },
+];
+
+export const breadcrumbShopAll = [
   {
-    id: "p3",
-    slug: "p/product-3",
-    title: "CERYL TWEED BLAZER BLACK",
-    price: 519000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2022/01/CERYL-TWEED-BLAZER-BLACK-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2022/01/LOOKBOUTIQUESTORE-CERYL-TWEED-BLAZER-BLACK-1-570x855.jpg",
-  },
-  {
-    id: "p4",
-    slug: "p/product-4",
-    title: "MARVA CROP TOP BROKEN WHITE",
-    price: 219000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-MARVA-CROP-TOP-WHITE-1-570x855.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-MARVA-CROP-TOP-WHITE-2-570x855.jpg",
-  },
-  {
-    id: "p5",
-    slug: "p/product-5",
-    title: "JEAN TWEED CROP TOP BLACK",
-    price: 269000,
-    image:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOOK-JEAN-TWEED-CROP-TOP-BLACK-570x854.jpg",
-    image_hover:
-      "https://lookboutiquestore.com/wp-content/uploads/2021/12/LOOKBOUTIQUESTORE-JEAN-TWEED-TOP-BLACK-1-570x855.jpg",
+    url: "/",
+    title: "HOME",
   },
 ];

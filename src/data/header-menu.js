@@ -2,27 +2,22 @@ const headerMenu = [
   {
     id: "m1",
     text: "NEW ARRIVALS",
-    url: "new-arrivals",
+    url: "product-cat/new-arrivals",
   },
   {
     id: "m2",
     text: "BEST SELLER",
-    url: "best-seller",
+    url: "product-cat/best-sellers",
   },
   {
     id: "m3",
     text: "SHOP",
-    url: "shop",
+    url: "shop-all",
   },
   {
     id: "m4",
     text: "CATEGORIES",
     url: "categories",
-  },
-  {
-    id: "m5",
-    text: "SALE",
-    url: "sale",
   },
 ];
 

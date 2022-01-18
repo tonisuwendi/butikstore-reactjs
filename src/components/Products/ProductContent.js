@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { Link } from "react-router-dom";
 
 import TitleWithUnderline from "../UI/Title/TitleWithUnderline";
 import ProductList from "./ProductList";
@@ -8,7 +9,7 @@ import classes from "./ProductContent.module.css";
 import SkeletonProductList from "../Skeleton/Products/ProductList";
 
 const ProductContent = memo(
-  ({ title, loading, products, error, columns = 6 }) => {
+  ({ title, loading, products, error, seeMore, columns = 6 }) => {
     let contentProductList;
     if (loading) {
       contentProductList = <SkeletonProductList columns={columns} />;
@@ -18,9 +19,13 @@ const ProductContent = memo(
       contentProductList = (
         <>
           <ProductList products={products} columns={columns} />
-          <div className={classes.button_see_more}>
-            <Button title="SEE MORE" size="lg" />
-          </div>
+          {seeMore && (
+            <div className={classes.button_see_more}>
+              <Link to={seeMore}>
+                <Button title="SEE MORE" size="lg" />
+              </Link>
+            </div>
+          )}
         </>
       );
     }

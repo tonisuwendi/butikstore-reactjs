@@ -27,3 +27,28 @@
   padding: 0 35px;
   letter-spacing: 2px;
 }
+
+.button_disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button_disabled:hover {
+  background-color: black;
+  opacity: 0.6;
+}
+
+.button svg {
+  animation: buttonLoading 600ms infinite;
+  position: relative;
+  top: 2.5px;
+}
+
+@keyframes buttonLoading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

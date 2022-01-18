@@ -1,0 +1,42 @@
+.banner {
+  align-items: center;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  width: 100%;
+}
+
+.banner h2 {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.underline {
+  background-color: #333;
+  border-radius: 20px;
+  height: 3px;
+  margin: 10px auto 20px auto;
+  width: 50px;
+}
+
+.breadcrumb {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.breadcrumb a {
+  color: #333;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb svg {
+  font-size: 16px;
+  position: relative;
+  top: 3px;
+}

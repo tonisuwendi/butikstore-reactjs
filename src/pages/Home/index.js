@@ -23,10 +23,10 @@ const HomePage = memo(() => {
 
   useEffect(() => {
     sendRequestBest({
-      url: `${endpoints.getBestSellers()}?limit=6`,
+      url: `${endpoints.getProductCat("best-sellers", "?limit=6")}`,
     });
     sendRequestNew({
-      url: `${endpoints.getNewArrivals()}?limit=5`,
+      url: `${endpoints.getProductCat("new-arrivals", "?limit=5")}`,
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [sendRequestBest, sendRequestNew]);

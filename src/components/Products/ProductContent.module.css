@@ -4,5 +4,8 @@
 }
 
 .center {
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 20px;
   text-align: center;
 }

@@ -15,6 +15,8 @@ const ProductContent = memo(
       contentProductList = <SkeletonProductList columns={columns} />;
     } else if (error) {
       contentProductList = <p className={classes.center}>{error}</p>;
+    } else if (products && products.length === 0) {
+      contentProductList = <p className={classes.center}>Product is empty!</p>;
     } else if (products && products.length > 0) {
       contentProductList = (
         <>

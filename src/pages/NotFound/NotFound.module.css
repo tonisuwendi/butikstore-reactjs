@@ -1,0 +1,23 @@
+.notfound {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.notfound h1 {
+  font-size: 15rem;
+  margin-bottom: 10px;
+}
+
+.notfound strong {
+  font-size: 30px;
+}
+
+.notfound p {
+  color: #777;
+  font-size: 17px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}

@@ -16,8 +16,8 @@ const headerMenu = [
   },
   {
     id: "m4",
-    text: "CATEGORIES",
-    url: "categories",
+    text: "BACK IN STOCK",
+    url: "product-cat/back-in-stock",
   },
 ];
 

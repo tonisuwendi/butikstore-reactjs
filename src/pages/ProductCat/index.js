@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import BannerTitle from "../../components/BannerTitle/BannerTitle";
 import Layout from "../../components/Layout/Default";
@@ -16,6 +16,7 @@ const ProductCat = () => {
   const sort = useURLQuery("sort");
 
   const params = useParams();
+  const history = useHistory();
   const { slug } = params;
 
   const {
@@ -23,6 +24,7 @@ const ProductCat = () => {
     isLoading,
     data: productsData,
     error: errorRequest,
+    slugIsExist,
   } = useHttp();
 
   const { categoryTitle } = productsData;
@@ -31,9 +33,12 @@ const ProductCat = () => {
     getRequestData({
       url: endpoints.getProductCat(slug, `?sort=${sort}`),
     });
+    if (!slugIsExist) {
+      history.push("/");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
     setMainTitle(categoryTitle);
-  }, [getRequestData, slug, categoryTitle, sort]);
+  }, [getRequestData, slug, categoryTitle, sort, slugIsExist, history]);
 
   return (
     <Layout>

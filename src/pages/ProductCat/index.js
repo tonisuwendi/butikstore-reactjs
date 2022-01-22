@@ -34,7 +34,7 @@ const ProductCat = () => {
       url: endpoints.getProductCat(slug, `?sort=${sort}`),
     });
     if (!slugIsExist) {
-      history.push("/");
+      history.push("/404");
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
     setMainTitle(categoryTitle);

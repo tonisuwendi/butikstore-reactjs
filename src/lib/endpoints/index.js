@@ -8,6 +8,7 @@ const endpoints = {
   getProductCat: (slug, query) =>
     `${PRODUCTS_API}product-category/${slug}${query}`,
   getAllProducts: (query) => `${PRODUCTS_API}all-products${query}`,
+  getProductBySlug: (slug) => `${PRODUCTS_API}detail/${slug}`,
 };
 
 export default endpoints;

@@ -1,4 +1,5 @@
 import { useState, memo } from "react";
+import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 
 import ProductImage from "./ProductImage";
@@ -28,7 +29,7 @@ const ProductItem = memo(({ slug, title, price, images }) => {
       onMouseEnter={imageEnterHandler}
       onMouseLeave={imageLeaveHandler}
     >
-      <a href={slug}>
+      <Link to={`/product/${slug}`}>
         <div className={classes.thumbnail}>
           <ProductImage
             image={images[0]}
@@ -45,7 +46,7 @@ const ProductItem = memo(({ slug, title, price, images }) => {
           <p className={classes.title}>{title}</p>
           <p className={classes.price}>Rp{priceFormat}</p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 });

@@ -4,7 +4,9 @@
   gap: 20px;
 }
 
-.headerright span {
+.iconMenu {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   border-left: 1px solid #ddd;
   font-size: 22px;
@@ -12,6 +14,6 @@
   line-height: 15px;
 }
 
-.headerright span:hover {
+.iconMenu:hover {
   color: #444;
 }

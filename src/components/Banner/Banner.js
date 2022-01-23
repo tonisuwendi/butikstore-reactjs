@@ -1,14 +1,12 @@
-import { memo } from "react";
-import BannerCategories from "./BannerCategories";
-import BannerSwiper from "./BannerSwiper";
+import { Fragment, memo } from 'react';
+import BannerCategories from './BannerCategories';
+import BannerSwiper from './BannerSwiper';
 
-const Banner = memo(() => {
-  return (
-    <>
-      <BannerSwiper />
-      <BannerCategories />
-    </>
-  );
-});
+const Banner = memo(() => (
+  <>
+    <BannerSwiper />
+    <BannerCategories />
+  </>
+));
 
 export default Banner;

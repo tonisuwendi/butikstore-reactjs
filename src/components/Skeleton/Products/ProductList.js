@@ -1,6 +1,6 @@
-import SkeletonProductItem from "./ProductItem";
+import SkeletonProductItem from './ProductItem';
 
-import classes from "./ProductList.module.css";
+import classes from './ProductList.module.css';
 
 const SkeletonProductList = ({ columns = 6 }) => {
   const skeletonItem = [];

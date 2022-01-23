@@ -1,15 +1,15 @@
-import { useEffect } from "react";
-import BannerTitle from "../../components/BannerTitle/BannerTitle";
-import Layout from "../../components/Layout/Default";
-import ProductLayout from "../../components/Layout/ProductLayout";
-import ProductContent from "../../components/Products/ProductContent";
-import { breadcrumbShopAll } from "../../data/product";
-import useHttp from "../../hooks/use-http";
-import useURLQuery from "../../hooks/use-urlquery";
-import endpoints from "../../lib/endpoints";
+import { useEffect } from 'react';
+import BannerTitle from '../../components/BannerTitle/BannerTitle';
+import Layout from '../../components/Layout/Default';
+import ProductLayout from '../../components/Layout/ProductLayout';
+import ProductContent from '../../components/Products/ProductContent';
+import { breadcrumbShopAll } from '../../data/product';
+import useHttp from '../../hooks/use-http';
+import useURLQuery from '../../hooks/use-urlquery';
+import endpoints from '../../lib/endpoints';
 
 const ShopAll = () => {
-  const sort = useURLQuery("sort");
+  const sort = useURLQuery('sort');
 
   const {
     sendRequest: getRequestData,
@@ -20,9 +20,9 @@ const ShopAll = () => {
 
   useEffect(() => {
     getRequestData({
-      url: endpoints.getAllProducts(sort ? `?sort=${sort}` : ""),
+      url: endpoints.getAllProducts(sort ? `?sort=${sort}` : ''),
     });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [getRequestData, sort]);
 
   return (

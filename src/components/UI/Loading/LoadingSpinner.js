@@ -1,15 +1,13 @@
-import { VscLoading } from "react-icons/vsc";
+import { VscLoading } from 'react-icons/vsc';
 
-import classes from "./LoadingSpinner.module.css";
+import classes from './LoadingSpinner.module.css';
 
-const LoadingSpinner = () => {
-  return (
-    <div className={classes.loading}>
-      <span>
-        <VscLoading />
-      </span>
-    </div>
-  );
-};
+const LoadingSpinner = () => (
+  <div className={classes.loading}>
+    <span>
+      <VscLoading />
+    </span>
+  </div>
+);
 
 export default LoadingSpinner;

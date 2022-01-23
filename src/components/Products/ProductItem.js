@@ -1,14 +1,17 @@
-import { useState, memo } from "react";
-import { Link } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
+import { useState, memo } from 'react';
+import { Link } from 'react-router-dom';
+import { FaEye } from 'react-icons/fa';
 
-import ProductImage from "./ProductImage";
-import classes from "./ProductItem.module.css";
+import ProductImage from './ProductImage';
 
-const ProductItem = memo(({ slug, title, price, images }) => {
+import classes from './ProductItem.module.css';
+
+const ProductItem = memo(({
+  slug, title, price, images,
+}) => {
   const [productIsHover, setProductIsHover] = useState(false);
 
-  const priceFormat = new Intl.NumberFormat("id-ID").format(price);
+  const priceFormat = new Intl.NumberFormat('id-ID').format(price);
 
   const imageEnterHandler = () => {
     setProductIsHover(true);
@@ -20,7 +23,7 @@ const ProductItem = memo(({ slug, title, price, images }) => {
 
   const detailStyles = [
     classes.detail,
-    productIsHover ? classes.detailShow : "",
+    productIsHover ? classes.detailShow : '',
   ];
 
   return (
@@ -36,15 +39,20 @@ const ProductItem = memo(({ slug, title, price, images }) => {
             imageHover={images[1] || images[0]}
             productIsHover={productIsHover}
           />
-          <div className={detailStyles.join(" ")}>
+          <div className={detailStyles.join(' ')}>
             <p>
-              <FaEye /> DETAIL
+              <FaEye />
+              {' '}
+              DETAIL
             </p>
           </div>
         </div>
         <div className={classes.description}>
           <p className={classes.title}>{title}</p>
-          <p className={classes.price}>Rp{priceFormat}</p>
+          <p className={classes.price}>
+            Rp
+            {priceFormat}
+          </p>
         </div>
       </Link>
     </div>

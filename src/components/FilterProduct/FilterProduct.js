@@ -1,16 +1,14 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-import { productFilter } from "../../data/product";
-import useURLQuery from "../../hooks/use-urlquery";
+import { productFilter } from '../../data/product';
+import useURLQuery from '../../hooks/use-urlquery';
 
-import classes from "./FilterProduct.module.css";
+import classes from './FilterProduct.module.css';
 
 const FilterProduct = () => {
-  const sort = useURLQuery("sort");
-
-  const filterClasses = (url) =>
-    url.includes(sort) ? classes.filterActive : classes.filterNotActive;
+  const sort = useURLQuery('sort');
+  const filterClasses = (url) => (url.includes(sort) ? classes.filterActive : classes.filterNotActive);
 
   return (
     <section className={classes.filter}>

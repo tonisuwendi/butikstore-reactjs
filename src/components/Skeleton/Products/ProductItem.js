@@ -1,15 +1,13 @@
-import classes from "./ProductItem.module.css";
+import classes from './ProductItem.module.css';
 
-const SkeletonProductItem = () => {
-  return (
-    <div className={classes.product}>
-      <div className={classes.image}></div>
-      <div className={classes.description}>
-        <div className={classes.title}></div>
-        <div className={classes.price}></div>
-      </div>
+const SkeletonProductItem = () => (
+  <div className={classes.product}>
+    <div className={classes.image} />
+    <div className={classes.description}>
+      <div className={classes.title} />
+      <div className={classes.price} />
     </div>
-  );
-};
+  </div>
+);
 
 export default SkeletonProductItem;

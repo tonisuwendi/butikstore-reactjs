@@ -1,11 +1,11 @@
-import { memo, useEffect } from "react";
+import { memo, useEffect } from 'react';
 
-import Banner from "../../components/Banner/Banner";
-import useHttp from "../../hooks/use-http";
-import Layout from "../../components/Layout/Default";
-import classes from "./Home.module.css";
-import ProductContent from "../../components/Products/ProductContent";
-import endpoints from "../../lib/endpoints";
+import Banner from '../../components/Banner/Banner';
+import useHttp from '../../hooks/use-http';
+import Layout from '../../components/Layout/Default';
+import classes from './Home.module.css';
+import ProductContent from '../../components/Products/ProductContent';
+import endpoints from '../../lib/endpoints';
 
 const HomePage = memo(() => {
   const {
@@ -23,12 +23,12 @@ const HomePage = memo(() => {
 
   useEffect(() => {
     sendRequestBest({
-      url: `${endpoints.getProductCat("best-sellers", "?limit=6")}`,
+      url: `${endpoints.getProductCat('best-sellers', '?limit=6')}`,
     });
     sendRequestNew({
-      url: `${endpoints.getProductCat("new-arrivals", "?limit=5")}`,
+      url: `${endpoints.getProductCat('new-arrivals', '?limit=5')}`,
     });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [sendRequestBest, sendRequestNew]);
 
   return (

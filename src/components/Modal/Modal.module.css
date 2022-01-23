@@ -1,0 +1,46 @@
+.modal {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.modalContent {
+    animation: showModal 300ms forwards;
+    box-sizing: border-box;
+    background-color: white;
+    height: auto;
+    left: 50%;
+    padding: 25px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+}
+
+@keyframes showModal {
+    from {transform: translate(-50%,-50%) scale(0);}
+    to {transform: translate(-50%,-50%) scale(1);}
+}
+
+.modalContent button {
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.modalBody {
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+
+.modalBody img {
+    width: 550px;
+}

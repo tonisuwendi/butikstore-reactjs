@@ -1,0 +1,28 @@
+.quantity_action {
+    display: flex;
+}
+
+.quantity_action button {
+    align-items: center;
+    display: flex;
+    background-color: white;
+    border: 1px solid #111;
+    cursor: pointer;
+    font-size: 17px;
+    height: 55px;
+    justify-content: center;
+    outline: none;
+    width: 55px;
+}
+
+.quantity_action input {
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #111;
+    border-top: 1px solid #111;
+    font-size: 17px;
+    height: 55px;
+    outline: none;
+    text-align: center;
+    width: 55px;
+}

@@ -5,15 +5,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { UIContextProvider } from './store/UI/ui-context';
+import UIProvider from './store/UI/UIProvider';
+import CartProvider from './store/Cart/CartProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UIContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </UIContextProvider>
+    <UIProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CartProvider>
+    </UIProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

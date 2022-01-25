@@ -1,7 +1,7 @@
 import classes from './ImagesWrapper.module.css';
 
 const SkeletonImageWrapper = () => (
-  <div className={classes.images_wrapper}>
+  <div className={`${classes.images_wrapper} skeleton_wrapper_animation`}>
     <div className={classes.top_images_wrapper}>
       <div className={classes.image1} />
       <div className={classes.container_image2}>

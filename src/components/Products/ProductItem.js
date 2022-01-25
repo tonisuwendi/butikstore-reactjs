@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaEye } from 'react-icons/fa';
 
 import ProductImage from './ProductImage';
+import { printFormatPrice } from '../../lib/function';
 
 import classes from './ProductItem.module.css';
 
@@ -10,8 +11,6 @@ const ProductItem = memo(({
   slug, title, price, images,
 }) => {
   const [productIsHover, setProductIsHover] = useState(false);
-
-  const priceFormat = new Intl.NumberFormat('id-ID').format(price);
 
   const imageEnterHandler = () => {
     setProductIsHover(true);
@@ -51,7 +50,7 @@ const ProductItem = memo(({
           <p className={classes.title}>{title}</p>
           <p className={classes.price}>
             Rp
-            {priceFormat}
+            {printFormatPrice(price)}
           </p>
         </div>
       </Link>

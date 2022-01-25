@@ -43,6 +43,9 @@ const ProductDetail = () => {
       top: 0,
       behavior: 'smooth',
     });
+    return () => {
+      uiCtx.toggleToaster(null);
+    };
   }, [getRequestData, slug, history]);
   const imageSizeHandler = (url) => {
     setImageSize(url);
@@ -68,9 +71,11 @@ const ProductDetail = () => {
         <div className={classes.main_info}>
           <ImagesWrapper images={product.images} />
           <InfoProduct
+            idProduct={product.id}
             title={product.title}
             shortDescription={product.short_description}
             price={product.price}
+            stock={product.stock}
             sizeGuide={product.size_guide}
             sizeChart={product.size_chart}
             categories={categories}

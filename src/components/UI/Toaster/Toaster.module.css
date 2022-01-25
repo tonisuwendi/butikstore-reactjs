@@ -1,0 +1,53 @@
+.toaster {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    padding: 15px 22px;
+    position: fixed;
+    top: 120px;
+    transform: translate(-50%,-100px);
+    width: 600px;
+    z-index: 10;
+}
+
+.show {
+    animation: showToaster 500ms forwards ease-in-out;
+}
+
+.hide {
+    animation: hideToaster 500ms forwards ease-in-out;
+}
+
+@keyframes showToaster {
+    from {transform: translate(-50%,-300px)}
+    to {transform: translate(-50%,0)}
+}
+
+@keyframes hideToaster {
+    from {transform: translate(-50%,0)}
+    to {transform: translate(-50%,-300px)}
+}
+
+.default {
+    background-color: #222;
+}
+
+.error {
+    background-color: #D6001C;
+}
+
+.toaster span {
+    color: white;
+    font-size: 14px;
+}
+
+.toaster button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    margin-left: 20px;
+}

@@ -11,9 +11,42 @@
   border-left: 1px solid #ddd;
   font-size: 22px;
   padding-left: 15px;
+  position: relative;
   line-height: 15px;
 }
 
 .iconMenu:hover {
   color: #444;
+}
+
+.cartCount {
+  align-items: center;
+  background-color: #333;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 11px;
+  height: 23px;
+  position: absolute;
+  right: -12px;
+  justify-content: center;
+  top: -12px;
+  width: 23px;
+}
+
+.cartBump {
+  animation: cartAdded 100ms forwards;
+}
+
+@keyframes cartAdded {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

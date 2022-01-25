@@ -9,11 +9,12 @@ const Button = memo(
     loadingText = 'LOADING',
     loading,
     size,
+    outline,
     submit,
     onClick,
   }) => {
     const buttonClasses = [
-      classes.button,
+      outline ? classes.button_outline : classes.button,
       size === 'sm' ? classes.button_sm : size === 'lg' ? classes.button_lg : '',
       loading ? classes.button_disabled : '',
     ];

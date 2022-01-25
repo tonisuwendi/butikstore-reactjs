@@ -16,21 +16,24 @@ const httpReducer = (state = initialState, action) => {
   let result = state;
   if (action.type === 'SEND') {
     result = {
-      ...state,
       loading: true,
+      responseData: [],
+      error: null,
+      slugIsExist: true,
     };
   }
   if (action.type === 'SUCCESS') {
     result = {
-      ...state,
       loading: false,
       responseData: action.responseData,
+      error: null,
+      slugIsExist: true,
     };
   }
   if (action.type === 'ERROR') {
     result = {
-      ...state,
       loading: false,
+      responseData: [],
       error: action.errorMessage,
       slugIsExist: action.slugIsExist,
     };

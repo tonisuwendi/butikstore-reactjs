@@ -26,3 +26,18 @@
     text-align: center;
     width: 55px;
 }
+
+.quantity_action_small button {
+    border: 1px solid #aaa;
+    font-size: 14px;
+    height: 30px;
+    width: 30px;
+}
+
+.quantity_action_small input {
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    font-size: 14px;
+    height: 30px;
+    width: 30px;
+}

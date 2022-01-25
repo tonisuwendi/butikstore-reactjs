@@ -61,7 +61,7 @@
     font-size: 15px;
     font-weight: bold;
     height: 55px;
-    padding: 0 40px;
+    width: 180px;
 }
 
 .add_to_cart_button:hover {

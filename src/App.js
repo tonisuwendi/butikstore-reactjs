@@ -7,19 +7,24 @@ import NotFound from './pages/NotFound';
 import ProductCat from './pages/ProductCat';
 import ProductDetail from './pages/ProductDetail';
 import ShopAll from './pages/ShopAll';
+import Cart from './pages/Cart';
 import UIContext from './store/UI/ui-context';
+import Toaster from './components/UI/Toaster/Toaster';
 
 const App = () => {
   const uiCtx = useContext(UIContext);
+  const { showSearch, toaster } = uiCtx;
 
   return (
     <>
-      {uiCtx.showSearch && <SearchModal />}
+      {showSearch && <SearchModal />}
+      {toaster && <Toaster text={toaster.text} button={toaster.button} error={toaster.error} />}
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/product-cat/:slug" component={ProductCat} />
         <Route path="/shop-all" component={ShopAll} />
         <Route path="/product/:slug" component={ProductDetail} />
+        <Route path="/cart" component={Cart} />
         <Route component={NotFound} />
       </Switch>
     </>

@@ -1,7 +1,7 @@
 import classes from './InfoProduct.module.css';
 
 const SkeletonInfoProduct = () => (
-  <div className={classes.info_product}>
+  <div className={`${classes.info_product} skeleton_wrapper_animation`}>
     <div className={classes.title} />
     <div className={classes.price} />
     <div className={classes.short_description}>

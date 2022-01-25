@@ -1,0 +1,26 @@
+.cart {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+    width: 1200px;
+}
+
+.cart_empty {
+    margin: 50px auto;
+    text-align: center;
+    width: 95%;
+}
+
+.shoppingCart {
+    width: calc(70% - 10px);
+}
+
+.cartTotals {
+    width: calc(30% - 10px);
+}
+
+.title {
+    color: #111;
+    font-size: 18px;
+    margin-bottom: 20px;
+}

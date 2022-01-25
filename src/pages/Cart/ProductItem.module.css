@@ -1,0 +1,46 @@
+.item {
+    align-items: center;
+    display: flex;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.item img {
+    margin-right: 20px;
+    width: 90px;
+}
+
+.info h3 {
+    color: #333;
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.info p {
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.actions {
+    display: flex;
+}
+
+.trash {
+    background: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 18px;
+    height: 30px;
+    margin-left: 20px;
+    position: relative;
+    top: 3px;
+    transition: .2s;
+}
+
+.trash:hover {
+    color: #111;
+}

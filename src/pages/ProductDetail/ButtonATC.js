@@ -39,7 +39,7 @@ const ButtonATC = ({ quantity, idProduct }) => {
     setATCHighlighted(true);
     sendRequest({
       method: 'POST',
-      url: endpoints.insertCart(),
+      url: endpoints.cart(),
       data: {
         clientKey: clientKey.token,
         productId: idProduct,

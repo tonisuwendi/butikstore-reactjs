@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 import BannerTitle from '../../components/BannerTitle/BannerTitle';
@@ -11,8 +11,6 @@ import { breadcrumbProductCat } from '../../data/product';
 import useURLQuery from '../../hooks/use-urlquery';
 
 const ProductCat = () => {
-  const [mainTitle, setMainTitle] = useState('');
-
   const sort = useURLQuery('sort');
 
   const params = useParams();
@@ -27,8 +25,6 @@ const ProductCat = () => {
     slugIsExist,
   } = useHttp();
 
-  const { categoryTitle } = productsData;
-
   useEffect(() => {
     getRequestData({
       url: endpoints.getProductCat(slug, `?sort=${sort}`),
@@ -37,13 +33,15 @@ const ProductCat = () => {
       history.push('/404');
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setMainTitle(categoryTitle);
-  }, [getRequestData, slug, categoryTitle, sort, slugIsExist, history]);
+  }, [getRequestData, slug, sort, slugIsExist, history]);
 
   return (
     <Layout>
       <main>
-        <BannerTitle title={mainTitle} breadcrumb={breadcrumbProductCat} />
+        <BannerTitle
+          title={productsData?.categoryTitle}
+          breadcrumb={breadcrumbProductCat}
+        />
         <ProductLayout>
           <ProductContent
             loading={isLoading}

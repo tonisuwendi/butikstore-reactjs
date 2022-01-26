@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { FiMinus, FiPlus } from 'react-icons/fi';
 
@@ -9,24 +9,17 @@ const QuantityAction = ({
 }) => {
   const qAClasses = [classes.quantity_action, smallAction ? classes.quantity_action_small : ''];
   const [enteredQuantity, setEnteredQuantity] = useState(quantity);
-  useEffect(() => {
-    onQuantity(enteredQuantity);
-  }, [enteredQuantity]);
   const plusQuantityHandler = () => {
-    setEnteredQuantity((prevState) => {
-      if (prevState < stock) {
-        return prevState + 1;
-      }
-      return prevState;
-    });
+    if (enteredQuantity < stock) {
+      setEnteredQuantity((prevState) => prevState + 1);
+      onQuantity(enteredQuantity + 1);
+    }
   };
   const minusQuantityHandler = () => {
-    setEnteredQuantity((prevState) => {
-      if (prevState > 1) {
-        return prevState - 1;
-      }
-      return prevState;
-    });
+    if (enteredQuantity > 1) {
+      setEnteredQuantity((prevState) => prevState - 1);
+      onQuantity(enteredQuantity - 1);
+    }
   };
   return (
     <div className={qAClasses.join(' ')}>

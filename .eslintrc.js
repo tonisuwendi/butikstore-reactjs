@@ -29,5 +29,6 @@ module.exports = {
     'no-nested-ternary': 'off',
     'default-param-last': 'off',
     'react/jsx-no-constructed-context-values': 'off',
+    'no-alert': 'off',
   },
 };

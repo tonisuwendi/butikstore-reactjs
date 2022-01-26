@@ -1,12 +1,12 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
 
 import Layout from '../../components/Layout/Default';
 import BannerTitle from '../../components/BannerTitle/BannerTitle';
-import Info from '../../components/UI/Info/Info';
-import Button from '../../components/UI/Button/Button';
-import CartContext from '../../store/Cart/cart-context';
 import ProductList from './ProductList';
+import CartIsEmpty from './CartIsEmpty';
+import CartTotals from './CartTotals';
+import ButtonAction from './ButtonAction';
+import CartContext from '../../store/Cart/cart-context';
 
 import classes from './Cart.module.css';
 
@@ -20,6 +20,12 @@ const breadcrumbs = [
 
 const Cart = () => {
   const cartCtx = useContext(CartContext);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return () => {
+      cartCtx.resetTemporary();
+    };
+  }, []);
   let cartContent;
   if (cartCtx.totalItem > 0) {
     cartContent = (
@@ -27,21 +33,17 @@ const Cart = () => {
         <div className={classes.shoppingCart}>
           <h2 className={classes.title}>Shopping Cart</h2>
           <ProductList />
+          <ButtonAction />
         </div>
         <div className={classes.cartTotals}>
           <h2 className={classes.title}>Cart Totals</h2>
+          <CartTotals />
+          <button className={classes.button_checkout} type="button">Proceed to Checkout</button>
         </div>
       </div>
     );
   } else {
-    cartContent = (
-      <div className={classes.cart_empty}>
-        <Info text="Your cart is currently empty." center />
-        <Link to="/shop-all">
-          <Button title="Return To Shop" size="lg" outline />
-        </Link>
-      </div>
-    );
+    cartContent = <CartIsEmpty />;
   }
   return (
     <Layout>

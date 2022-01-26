@@ -6,6 +6,7 @@ const UIProvider = ({ children }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [toaster, setToaster] = useState(null);
+  const [loading, setLoading] = useState('');
 
   const toggleSearchHandler = useCallback(() => {
     setShowSearch((prevState) => !prevState);
@@ -16,14 +17,19 @@ const UIProvider = ({ children }) => {
   const toggleToasterHandler = useCallback((data) => {
     setToaster(data);
   }, []);
+  const toggleLoadingHandler = useCallback((type) => {
+    setLoading(type);
+  }, []);
 
   const contextValue = {
     showSearch,
     showModal,
     toaster,
+    loading,
     toggleSearch: toggleSearchHandler,
     toggleModal: toggleModalHandler,
     toggleToaster: toggleToasterHandler,
+    toggleLoading: toggleLoadingHandler,
   };
 
   return (

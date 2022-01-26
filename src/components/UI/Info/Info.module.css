@@ -15,3 +15,17 @@
     font-size: 20px;
     font-weight: 500;
 }
+
+.smallInfo {
+    border-top: 2px solid #444;
+    padding: 15px;
+}
+
+.smallInfo p {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.warning p {
+    color: #ea5f1c;
+}

@@ -24,7 +24,7 @@ const ButtonATC = ({ quantity, idProduct }) => {
     textFailed: 'Failed to add item to cart, please try again',
     onSuccess: aTCSuccessHandler,
   });
-  const addToCartHandler = () => {
+  const addToCartHandler = async () => {
     highlightedHandler(true);
     sendRequest({
       method: 'POST',

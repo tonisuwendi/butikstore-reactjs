@@ -5,7 +5,6 @@ const CLIENT_KEY = 'CLIENT_KEY';
 const getToken = localStorage.getItem(CLIENT_KEY);
 
 const useClientKey = () => {
-  console.log(getToken);
   const [token, setToken] = useState(getToken);
   const setItem = () => {
     const randomString = generateRandomString();

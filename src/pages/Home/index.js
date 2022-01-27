@@ -34,6 +34,7 @@ const HomePage = memo(() => {
   return (
     <Layout>
       <main>
+         <div className={classes.info}>Masih dalam tahap pengembangan</div>
         <Banner />
         <section className={classes.products}>
           <ProductContent

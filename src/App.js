@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import SearchModal from './components/UI/Search/SearchModal';
@@ -11,18 +11,10 @@ import Cart from './pages/Cart';
 import UIContext from './store/UI/ui-context';
 import Toaster from './components/UI/Toaster/Toaster';
 import LoadingFullScreen from './components/UI/Loading/LoadingFullScreen';
-import useClientKey from './hooks/use-clientkey';
 
 const App = () => {
-  const clientKey = useClientKey();
   const uiCtx = useContext(UIContext);
   const { showSearch, toaster, loading } = uiCtx;
-
-  useEffect(() => {
-    if (!clientKey.token) {
-      clientKey.setItem();
-    }
-  }, []);
 
   return (
     <>

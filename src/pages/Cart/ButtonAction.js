@@ -5,7 +5,6 @@ import Info from '../../components/UI/Info/Info';
 import UIContext from '../../store/UI/ui-context';
 import CartContext from '../../store/Cart/cart-context';
 import endpoints from '../../lib/endpoints';
-import useClientKey from '../../hooks/use-clientkey';
 import useHttp from '../../hooks/use-http';
 import useToaster from '../../hooks/use-toaster';
 
@@ -14,7 +13,6 @@ import classes from './Cart.module.css';
 const ButtonAction = () => {
   const cartCtx = useContext(CartContext);
   const uiCtx = useContext(UIContext);
-  const clientKey = useClientKey();
   const {
     sendRequest, isLoading, error,
   } = useHttp();
@@ -41,7 +39,7 @@ const ButtonAction = () => {
       method: 'PUT',
       url: endpoints.cart(),
       data: {
-        clientKey: clientKey.token,
+        clientKey: cartCtx.clientKey,
         data: cartCtx.tempItems,
       },
     });

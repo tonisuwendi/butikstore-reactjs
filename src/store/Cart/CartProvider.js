@@ -1,79 +1,59 @@
-import { useReducer, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 
-import CartContext from './cart-context';
 import useHttp from '../../hooks/use-http';
 import endpoints from '../../lib/endpoints';
-import useClientKey from '../../hooks/use-clientkey';
+import { generateRandomString } from '../../lib/function';
+import CartContext from './cart-context';
+import cartReducer, { initialState } from './cartReducer';
 
-const initialState = {
-  totalItem: 0,
-  items: [],
-  subtotal: 0,
-  tempItems: [],
-};
-
-const cartReducer = (state, action) => {
-  if (action.type === 'TEMPORARY') {
-    const existingCartItemIndex = state.tempItems.findIndex((item) => item.id === action.data.id);
-    const existingCartItem = state.tempItems[existingCartItemIndex];
-    let updatedItems;
-    if (existingCartItem) {
-      const updatedItem = {
-        ...existingCartItem,
-        quantity: action.data.quantity,
-      };
-      updatedItems = [...state.tempItems];
-      updatedItems[existingCartItemIndex] = updatedItem;
-    } else {
-      updatedItems = state.tempItems.concat(action.data);
-    }
-    return {
-      ...state,
-      tempItems: updatedItems,
-    };
-  }
-  if (action.type === 'UPDATE') {
-    return {
-      ...state,
-      totalItem: action.data.totalItems || 0,
-      items: action.data.items || [],
-      subtotal: action.data.subtotal || 0,
-    };
-  }
-  if (action.type === 'RESET_TEMP') {
-    return {
-      ...state,
-      tempItems: [],
-    };
-  }
-  return initialState;
-};
+const CLIENT_CART_KEY = 'CLIENT_CART_KEY';
 
 const CartProvider = ({ children }) => {
-  const [cartState, dispatch] = useReducer(cartReducer, initialState);
+  const keyStorage = localStorage.getItem(CLIENT_CART_KEY);
+  const [cartState, cartDispatch] = useReducer(cartReducer, initialState);
   const { sendRequest, data: cartData } = useHttp();
-  const clientKey = useClientKey();
+  const { clientKey } = cartState;
+
   const getDataCart = useCallback(() => {
+    const token = localStorage.getItem(CLIENT_CART_KEY);
     sendRequest({
-      url: endpoints.getCart(clientKey.token),
+      url: endpoints.getCart(token),
     });
   }, [sendRequest]);
+
   useEffect(() => {
     getDataCart();
   }, [getDataCart]);
+
   useEffect(() => {
-    dispatch({ type: 'UPDATE', data: cartData });
+    if (!keyStorage) {
+      const randomString = generateRandomString();
+      localStorage.setItem(CLIENT_CART_KEY, randomString);
+    }
+    cartDispatch({
+      type: 'SET_CLIENT_KEY',
+      clientKey: keyStorage || localStorage.getItem(CLIENT_CART_KEY),
+    });
+  }, [clientKey]);
+
+  useEffect(() => {
+    cartDispatch({ type: 'UPDATE', data: cartData });
   }, [cartData]);
+
   const updateCartHandler = useCallback(() => {
     getDataCart();
   }, []);
+
   const updateCartTemporaryHandler = useCallback((data) => {
-    dispatch({ type: 'TEMPORARY', data });
+    cartDispatch({ type: 'TEMPORARY', data });
   }, []);
+
   const resetTemporaryHandler = useCallback(() => {
-    dispatch({ type: 'RESET_TEMP' });
+    cartDispatch({ type: 'RESET_TEMP' });
   }, []);
+
   const cartContext = {
+    clientKey,
     totalItem: cartState.totalItem,
     items: cartState.items,
     subtotal: cartState.subtotal,
@@ -83,7 +63,11 @@ const CartProvider = ({ children }) => {
     resetTemporary: resetTemporaryHandler,
   };
 
-  return <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={cartContext}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
 export default CartProvider;

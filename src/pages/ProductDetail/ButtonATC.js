@@ -3,14 +3,12 @@ import { useContext } from 'react';
 import CartContext from '../../store/Cart/cart-context';
 import useHttp from '../../hooks/use-http';
 import endpoints from '../../lib/endpoints';
-import useClientKey from '../../hooks/use-clientkey';
 import useToaster from '../../hooks/use-toaster';
 
 import classes from './InfoProduct.module.css';
 
 const ButtonATC = ({ quantity, idProduct }) => {
   const cartCtx = useContext(CartContext);
-  const clientKey = useClientKey();
   const {
     sendRequest, error, isLoading,
   } = useHttp();
@@ -30,7 +28,7 @@ const ButtonATC = ({ quantity, idProduct }) => {
       method: 'POST',
       url: endpoints.cart(),
       data: {
-        clientKey: clientKey.token,
+        clientKey: cartCtx.clientKey,
         productId: idProduct,
         qty: quantity,
       },

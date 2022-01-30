@@ -6,7 +6,6 @@ import QuantityAction from '../../components/QuantityAction/QuantityAction';
 import CartContext from '../../store/Cart/cart-context';
 import useHttp from '../../hooks/use-http';
 import endpoints from '../../lib/endpoints';
-import useClientKey from '../../hooks/use-clientkey';
 import useToaster from '../../hooks/use-toaster';
 import { printFormatPrice } from '../../lib/function';
 
@@ -16,7 +15,6 @@ const ProductItem = ({
   id, image, title, price, qty, slug,
 }) => {
   const cartCtx = useContext(CartContext);
-  const clientKey = useClientKey();
   const { sendRequest, error, isLoading } = useHttp();
   const updateQuantityHandler = (quantity) => {
     cartCtx.updateCartTemporary({ id, quantity });
@@ -40,7 +38,7 @@ const ProductItem = ({
         method: 'DELETE',
         data: {
           id,
-          clientKey: clientKey.token,
+          clientKey: cartCtx.clientKey,
         },
       });
     }

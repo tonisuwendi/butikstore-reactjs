@@ -39,10 +39,6 @@ const ProductDetail = () => {
     getRequestData({
       url: endpoints.getProductBySlug(slug),
     });
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
     return () => {
       uiCtx.toggleToaster(null);
     };
@@ -95,7 +91,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <Layout>
+    <Layout title={product?.title}>
       {uiCtx.showModal && (
         <Modal>
           <img src={imageSize} alt="size" />

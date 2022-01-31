@@ -32,11 +32,10 @@ const ProductCat = () => {
     if (!slugIsExist) {
       history.push('/404');
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [getRequestData, slug, sort, slugIsExist, history]);
 
   return (
-    <Layout>
+    <Layout title={productsData?.categoryTitle}>
       <main>
         <BannerTitle
           title={productsData?.categoryTitle}

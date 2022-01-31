@@ -27,7 +27,6 @@ const Successfully = () => {
     sendRequest({
       url: endpoints.orders(`${orderNumber}?orderId=${idProduct}&phone=${phone}`),
     });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [orderNumber, idProduct, phone]);
 
   const { order, products } = data;
@@ -78,7 +77,7 @@ const Successfully = () => {
   }
 
   return (
-    <Layout>
+    <Layout title="Successfully">
       <main className={classes.wrapper}>
         <h2 className={classes.title}>
           Thank you.

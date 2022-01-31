@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import ProductCat from './pages/ProductCat';
 import ProductDetail from './pages/ProductDetail';
 import ShopAll from './pages/ShopAll';
+import Search from './pages/Search';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Successfully from './pages/Successfully';
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/" exact component={HomePage} />
         <Route path="/product-cat/:slug" component={ProductCat} />
         <Route path="/shop-all" component={ShopAll} />
+        <Route path="/search/:keyword" component={Search} />
         <Route path="/product/:slug" component={ProductDetail} />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />

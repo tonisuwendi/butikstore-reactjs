@@ -16,12 +16,9 @@ import classes from './Cart.module.css';
 const Cart = () => {
   const cartCtx = useContext(CartContext);
   const uiCtx = useContext(UIContext);
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return () => {
-      cartCtx.resetTemporary();
-      uiCtx.toggleToaster(null);
-    };
+  useEffect(() => () => {
+    cartCtx.resetTemporary();
+    uiCtx.toggleToaster(null);
   }, []);
   let cartContent;
   if (cartCtx.totalItem > 0) {
@@ -45,7 +42,7 @@ const Cart = () => {
     cartContent = <CartIsEmpty />;
   }
   return (
-    <Layout>
+    <Layout title="Cart">
       <BannerTitle title="CART" breadcrumb={breadcrumbs} />
       {cartContent}
     </Layout>

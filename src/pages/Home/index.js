@@ -28,7 +28,6 @@ const HomePage = memo(() => {
     sendRequestNew({
       url: `${endpoints.getProductCat('new-arrivals', '?limit=5')}`,
     });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [sendRequestBest, sendRequestNew]);
 
   return (

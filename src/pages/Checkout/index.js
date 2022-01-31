@@ -27,10 +27,6 @@ const Checkout = () => {
   } = useHttp();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
-
-  useEffect(() => {
     if (!isLoading) {
       uiCtx.toggleLoading('');
     }
@@ -76,7 +72,7 @@ const Checkout = () => {
   const buttonClasses = [classes.button_order, formIsValid && !isLoading ? '' : classes.buttonInActive];
 
   return (
-    <Layout>
+    <Layout title="Checkout">
       <BannerTitle title="CHECKOUT" breadcrumb={breadcrumbs} />
       {contentWrapper}
       {!contentWrapper && (

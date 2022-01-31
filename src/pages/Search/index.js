@@ -1,15 +1,20 @@
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
 import BannerTitle from '../../components/BannerTitle/BannerTitle';
 import Layout from '../../components/Layout/Default';
 import ProductLayout from '../../components/Layout/ProductLayout';
 import ProductContent from '../../components/Products/ProductContent';
-import { breadcrumbShopAll } from '../../data/product';
 import useHttp from '../../hooks/use-http';
-import useURLQuery from '../../hooks/use-urlquery';
 import endpoints from '../../lib/endpoints';
+import { breadcrumbProductCat } from '../../data/product';
+import useURLQuery from '../../hooks/use-urlquery';
 
-const ShopAll = () => {
+const Search = () => {
   const sort = useURLQuery('sort');
+
+  const params = useParams();
+  const { keyword } = params;
 
   const {
     sendRequest: getRequestData,
@@ -20,14 +25,17 @@ const ShopAll = () => {
 
   useEffect(() => {
     getRequestData({
-      url: endpoints.getAllProducts(sort ? `?sort=${sort}` : ''),
+      url: endpoints.search(`?keyword=${keyword}&sort=${sort}`),
     });
-  }, [getRequestData, sort]);
+  }, [getRequestData, keyword, sort]);
 
   return (
-    <Layout title="SHOP ALL">
+    <Layout title={productsData?.categoryTitle}>
       <main>
-        <BannerTitle title="SHOP ALL" breadcrumb={breadcrumbShopAll} />
+        <BannerTitle
+          title={productsData?.categoryTitle}
+          breadcrumb={breadcrumbProductCat}
+        />
         <ProductLayout>
           <ProductContent
             loading={isLoading}
@@ -41,4 +49,4 @@ const ShopAll = () => {
   );
 };
 
-export default ShopAll;
+export default Search;

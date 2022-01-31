@@ -4,7 +4,7 @@ export const benefits = [
   {
     id: 'b1',
     title: 'FREE SHIPPING',
-    description: 'Minimal Purchase IDR 350.000',
+    description: 'Minimal Purchase IDR 10.000',
     image:
       'https://lookboutiquestore.com/wp-content/uploads/2019/11/icon-01-1.png',
   },

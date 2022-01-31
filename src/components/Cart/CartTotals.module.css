@@ -1,0 +1,26 @@
+.cart_total {
+  background-color: #f7f7f7;
+  padding: 20px;
+  width: 100%;
+}
+
+.cart_total_item {
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.cart_total_item:nth-child(1) {
+  padding-top: 10px;
+}
+
+.cart_total_item:nth-last-child(1) {
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.cart_total_item span,
+.cart_total_item strong {
+  font-size: 14px;
+}

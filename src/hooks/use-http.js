@@ -53,7 +53,7 @@ const useHttp = () => {
       method: method || 'GET',
       headers: headers || defaultConfig.headers,
       data: bodyDaya || null,
-      timeout: 5000,
+      timeout: 10000,
     })
       .then((res) => {
         const { success, data } = res.data;

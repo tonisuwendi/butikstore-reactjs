@@ -1,29 +1,26 @@
 import { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Layout from '../../components/Layout/Default';
 import BannerTitle from '../../components/BannerTitle/BannerTitle';
-import ProductList from './ProductList';
+import ProductList from '../../components/Cart/ProductList';
 import CartIsEmpty from './CartIsEmpty';
-import CartTotals from './CartTotals';
+import CartTotals from '../../components/Cart/CartTotals';
 import ButtonAction from './ButtonAction';
 import CartContext from '../../store/Cart/cart-context';
+import UIContext from '../../store/UI/ui-context';
+import { breadcrumbs } from '../../data/banner';
 
 import classes from './Cart.module.css';
 
-const breadcrumbs = [
-  {
-    id: 'b1',
-    url: '/',
-    title: 'HOME',
-  },
-];
-
 const Cart = () => {
   const cartCtx = useContext(CartContext);
+  const uiCtx = useContext(UIContext);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return () => {
       cartCtx.resetTemporary();
+      uiCtx.toggleToaster(null);
     };
   }, []);
   let cartContent;
@@ -32,13 +29,15 @@ const Cart = () => {
       <div className={classes.cart}>
         <div className={classes.shoppingCart}>
           <h2 className={classes.title}>Shopping Cart</h2>
-          <ProductList />
+          <ProductList withAction products={cartCtx.items} />
           <ButtonAction />
         </div>
         <div className={classes.cartTotals}>
           <h2 className={classes.title}>Cart Totals</h2>
           <CartTotals />
-          <button className={classes.button_checkout} type="button">Proceed to Checkout</button>
+          <Link to="/checkout">
+            <button className={classes.button_checkout} type="button">Proceed to Checkout</button>
+          </Link>
         </div>
       </div>
     );

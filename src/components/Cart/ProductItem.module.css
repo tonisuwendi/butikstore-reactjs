@@ -21,11 +21,21 @@
     color: #111;
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+}
+
+.textLow {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+.notAction img {
+    width: 65px;
 }
 
 .actions {
     display: flex;
+    margin-top: 15px;
 }
 
 .trash {

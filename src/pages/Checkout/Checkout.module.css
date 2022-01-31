@@ -1,0 +1,52 @@
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  width: 95%;
+}
+
+.form {
+  position: sticky;
+  top: 100px;
+  width: calc(60% - 20px);
+}
+
+.myOrder {
+  width: calc(40% - 20px);
+}
+
+.item {
+  margin-bottom: 40px;
+}
+
+.title {
+  color: #111;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.button_order {
+  background-color: #111;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: bold;
+  height: 80px;
+  margin-top: 30px;
+  transition: .2s;
+  width: 100%;
+}
+
+.button_order:hover {
+  opacity: 0.9;
+}
+
+.buttonInActive {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttonInActive:hover {
+  opacity: 0.6;
+}

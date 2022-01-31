@@ -1,0 +1,45 @@
+.form-group {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.form-group label {
+  color: #333;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  color: #555;
+  font-size: 16px;
+  height: 55px;
+  margin-top: 10px;
+  outline: none;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.form-group textarea {
+  padding: 15px 20px;
+  height: 100px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.inputActive:valid {
+  border: 1px solid #555;
+}
+
+.formError label,
+.formError small {
+  color: red;
+}
+
+.formError input,
+.formError textarea {
+  border: 1px solid red;
+  background-color: rgba(255,0,0,0.05);
+}

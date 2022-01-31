@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import CartContext from '../../store/Cart/cart-context';
 import { printFormatPrice } from '../../lib/function';
 
-import classes from './Cart.module.css';
+import classes from './CartTotals.module.css';
 
 const CartTotals = () => {
   const cartCtx = useContext(CartContext);

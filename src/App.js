@@ -8,6 +8,8 @@ import ProductCat from './pages/ProductCat';
 import ProductDetail from './pages/ProductDetail';
 import ShopAll from './pages/ShopAll';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Successfully from './pages/Successfully';
 import UIContext from './store/UI/ui-context';
 import Toaster from './components/UI/Toaster/Toaster';
 import LoadingFullScreen from './components/UI/Loading/LoadingFullScreen';
@@ -27,6 +29,8 @@ const App = () => {
         <Route path="/shop-all" component={ShopAll} />
         <Route path="/product/:slug" component={ProductDetail} />
         <Route path="/cart" component={Cart} />
+        <Route path="/checkout" component={Checkout} />
+        <Route path="/successfully/:orderNumber" component={Successfully} />
         <Route component={NotFound} />
       </Switch>
     </>

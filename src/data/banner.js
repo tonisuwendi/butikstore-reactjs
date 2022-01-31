@@ -59,3 +59,11 @@ export const bannerCategories = [
     url: 'product-cat/under-300k',
   },
 ];
+
+export const breadcrumbs = [
+  {
+    id: 'b1',
+    url: '/',
+    title: 'HOME',
+  },
+];

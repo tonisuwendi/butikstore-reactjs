@@ -1,0 +1,35 @@
+.main {
+  margin: 50px auto 80px auto;
+  width: 700px;
+}
+
+.button {
+  height: 65px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.link {
+  border-top: 1px solid #ddd;
+  color: #888;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.link a {
+  color: #111;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.buttonInActive {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttonInActive:hover {
+  opacity: 0.6;
+}

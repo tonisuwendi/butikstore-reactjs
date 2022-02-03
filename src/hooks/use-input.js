@@ -22,12 +22,18 @@ const useInput = () => {
     }
   }, [inputValue]);
 
+  const setInputErrorHandler = useCallback((data) => {
+    setInputError(data || false);
+    setInputIsValid(!data);
+  }, []);
+
   return {
     value: inputValue,
     error: inputError,
     isValid: inputIsValid,
     changeInput: changeInputHandler,
     blurInput: blurInputHandler,
+    setInputError: setInputErrorHandler,
   };
 };
 

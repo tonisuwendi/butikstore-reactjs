@@ -4,7 +4,7 @@ import {
 import UIContext from '../store/UI/ui-context';
 
 const useToaster = ({
-  isSuccess, isFailed, textSuccess, textFailed, onSuccess, onFailed = false,
+  isSuccess, isFailed, textSuccess, textFailed, onSuccess, onFailed = false, timeout,
 }) => {
   const [highlighted, setHighlighted] = useState(false);
   const uiCtx = useContext(UIContext);
@@ -16,6 +16,7 @@ const useToaster = ({
       uiCtx.toggleToaster({
         text: textFailed,
         error: true,
+        timeout,
       });
       setHighlighted(false);
       if (onFailed) onFailed();
@@ -23,6 +24,7 @@ const useToaster = ({
     if (isSuccess) {
       uiCtx.toggleToaster({
         text: textSuccess,
+        timeout,
       });
       setHighlighted(false);
       onSuccess();

@@ -3,6 +3,7 @@ import common from './common';
 const PRODUCTS_API = `${common.DOMAIN_API}products/`;
 const CART_API = `${common.DOMAIN_API}cart/`;
 const ORDERS_API = `${common.DOMAIN_API}orders/`;
+const AUTH_API = `${common.DOMAIN_API}auth/`;
 
 const endpoints = {
   getProductCat: (slug, query) => `${PRODUCTS_API}product-category/${slug}${query}`,
@@ -12,6 +13,7 @@ const endpoints = {
   cart: () => CART_API,
   getCart: (clientKey) => `${CART_API}${clientKey}`,
   orders: (rest = '') => `${ORDERS_API}${rest}`,
+  auth: (type = '') => `${AUTH_API}${type}`,
 };
 
 export default endpoints;

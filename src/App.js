@@ -11,6 +11,8 @@ import Search from './pages/Search';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Successfully from './pages/Successfully';
+import Register from './pages/Auth/Register';
+import Login from './pages/Auth/Login';
 import UIContext from './store/UI/ui-context';
 import Toaster from './components/UI/Toaster/Toaster';
 import LoadingFullScreen from './components/UI/Loading/LoadingFullScreen';
@@ -22,7 +24,9 @@ const App = () => {
   return (
     <>
       {showSearch && <SearchModal />}
-      {toaster && <Toaster text={toaster.text} button={toaster.button} error={toaster.error} />}
+      {toaster && (
+        <Toaster text={toaster.text} button={toaster.button} error={toaster.error} timeout={toaster.timeout} />
+      )}
       {loading === 'FULLSCREEN' && <LoadingFullScreen />}
       <Switch>
         <Route path="/" exact component={HomePage} />
@@ -33,6 +37,8 @@ const App = () => {
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/successfully/:orderNumber" component={Successfully} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
         <Route component={NotFound} />
       </Switch>
     </>

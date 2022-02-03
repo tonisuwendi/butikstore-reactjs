@@ -20,9 +20,13 @@ const HeaderRight = memo(() => {
     history.push('/cart');
   };
 
+  const pushToLogin = () => {
+    history.push('/login');
+  };
+
   return (
     <div className={classes.headerright}>
-      <Button title="LOGIN / REGISTER" size="sm" />
+      <Button title="LOGIN / REGISTER" size="sm" onClick={pushToLogin} />
       <button className={classes.iconMenu} type="button" onClick={toggleSearchHandler}>
         <IoSearchOutline />
       </button>

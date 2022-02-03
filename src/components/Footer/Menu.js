@@ -7,7 +7,7 @@ const Menu = ({ title, menus }) => (
     <ul>
       {menus.map((menu) => (
         <li key={menu.id}>
-          <a href={menu.url}>{menu.title}</a>
+          <a target="_blank" rel="noreferrer" href={menu.url}>{menu.title}</a>
         </li>
       ))}
     </ul>

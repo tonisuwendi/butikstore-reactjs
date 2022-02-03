@@ -12,15 +12,17 @@ const Button = memo(
     outline,
     submit,
     onClick,
+    disabled,
+    className,
   }) => {
     const buttonClasses = [
       outline ? classes.button_outline : classes.button,
       size === 'sm' ? classes.button_sm : size === 'lg' ? classes.button_lg : '',
-      loading ? classes.button_disabled : '',
+      loading ? classes.button_disabled : '', className || '',
     ];
     return (
       <button
-        disabled={loading}
+        disabled={disabled || loading}
         type={submit ? 'submit' : 'button'}
         className={buttonClasses.join(' ')}
         onClick={onClick}

@@ -16,6 +16,9 @@ import Login from './pages/Auth/Login';
 import UIContext from './store/UI/ui-context';
 import Toaster from './components/UI/Toaster/Toaster';
 import LoadingFullScreen from './components/UI/Loading/LoadingFullScreen';
+import ProtectedRoute from './components/ProtectedRoute';
+import Dashboard from './pages/Dashboard';
+import DashboardOrders from './pages/Dashboard/Orders';
 
 const App = () => {
   const uiCtx = useContext(UIContext);
@@ -37,8 +40,10 @@ const App = () => {
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/successfully/:orderNumber" component={Successfully} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
+        <ProtectedRoute path="/register" component={Register} auth />
+        <ProtectedRoute path="/login" component={Login} auth />
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute path="/dashboard/orders" component={DashboardOrders} />
         <Route component={NotFound} />
       </Switch>
     </>

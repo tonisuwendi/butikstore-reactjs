@@ -1,0 +1,75 @@
+.wrapper {
+  margin: 10px auto 100px auto;
+  width: 1000px;
+}
+
+.menuWrapper {
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.menuList {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.menuList li span,
+.menuList li a {
+  color: #555;
+  line-height: 50px;
+  padding: 20px;
+}
+
+.menuList li span {
+  color: red;
+  cursor: pointer;
+}
+
+.menuList li a:hover {
+  color: #111;
+}
+
+.menuActive {
+  color: #111 !important;
+  font-weight: bold;
+}
+
+.underline {
+  background-color: #555;
+  border-radius: 10px;
+  margin: auto;
+  height: 3px;
+  position: relative;
+  width: 50px;
+}
+
+.underlineFirst {
+  animation: underlineFirstAnimation 200ms forwards;
+}
+
+.underlineSecond {
+  animation: underlineSecondAnimation 200ms forwards;
+}
+
+@keyframes underlineFirstAnimation {
+  from { left: 18px; }
+  to { left: -95px; }
+}
+
+@keyframes underlineSecondAnimation {
+  from { left: -95px; }
+  to { left: 18px; }
+}
+
+.title {
+  font-size: 25px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.information {
+  color: #555;
+  font-size: 14px;
+  margin-top: 10px;
+}

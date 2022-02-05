@@ -9,11 +9,11 @@ const ProtectedRoute = ({
   const authCtx = useContext(AuthContext);
 
   if (auth && authCtx.isLoggedIn) {
-    return <Redirect to="dashboard" />;
+    return <Redirect to="/dashboard" />;
   }
 
   if (!auth && !authCtx.isLoggedIn) {
-    return <Redirect to="login" />;
+    return <Redirect to="/login" />;
   }
 
   return <Route exact={exact} path={path} component={component} />;

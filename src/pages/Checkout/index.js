@@ -11,11 +11,13 @@ import useHttp from '../../hooks/use-http';
 import endpoints from '../../lib/endpoints';
 import UIContext from '../../store/UI/ui-context';
 import CartIsEmpty from '../Cart/CartIsEmpty';
+import AuthContext from '../../store/Auth/auth-context';
 import { breadcrumbs } from '../../data/banner';
 
 import classes from './Checkout.module.css';
 
 const Checkout = () => {
+  const authCtx = useContext(AuthContext);
   const cartCtx = useContext(CartContext);
   const uiCtx = useContext(UIContext);
   const history = useHistory();
@@ -56,6 +58,7 @@ const Checkout = () => {
     const data = {
       ...formData,
       clientKey: cartCtx.clientKey,
+      token: authCtx.token,
     };
     sendRequest({
       url: endpoints.orders(),

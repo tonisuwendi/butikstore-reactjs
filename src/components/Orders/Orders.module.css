@@ -1,0 +1,20 @@
+.orders {
+  width: 100%;
+}
+
+.orders th,
+.orders td {
+  color: #555;
+  font-size: 15px;
+  padding: 7px 0;
+}
+
+.orders th {
+  color: #222;
+  text-align: left;
+  padding-bottom: 12px;
+}
+
+.center {
+  text-align: center;
+}

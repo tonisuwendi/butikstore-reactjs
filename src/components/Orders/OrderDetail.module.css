@@ -1,0 +1,30 @@
+.orderItem {
+  width: 400px;
+}
+
+.order {
+  display: flex;
+  gap: 30px;
+}
+
+.order h4 {
+  font-size: 20px;
+  margin-bottom: 3px;
+  margin-top: 20px;
+}
+
+.order p {
+  color: #555;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.products {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+  margin-top: 40px;
+}
+
+.products h4 {
+  font-size: 20px;
+}

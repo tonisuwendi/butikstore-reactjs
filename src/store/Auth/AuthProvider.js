@@ -46,6 +46,7 @@ const AuthProvider = ({ children }) => {
   const userIsLoggedIn = !!token;
 
   const authValue = {
+    token,
     isLoggedIn: userIsLoggedIn,
     login: loginHandler,
     logout: logoutHandler,

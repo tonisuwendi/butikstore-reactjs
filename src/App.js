@@ -19,6 +19,7 @@ import LoadingFullScreen from './components/UI/Loading/LoadingFullScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 import DashboardOrders from './pages/Dashboard/Orders';
+import DashboardOrderDetail from './pages/Dashboard/OrderDetail';
 
 const App = () => {
   const uiCtx = useContext(UIContext);
@@ -44,6 +45,7 @@ const App = () => {
         <ProtectedRoute path="/login" component={Login} auth />
         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
         <ProtectedRoute path="/dashboard/orders" component={DashboardOrders} />
+        <ProtectedRoute path="/dashboard/order/:orderNumber" component={DashboardOrderDetail} />
         <Route component={NotFound} />
       </Switch>
     </>

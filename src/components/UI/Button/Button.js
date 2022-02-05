@@ -17,7 +17,10 @@ const Button = memo(
   }) => {
     const buttonClasses = [
       outline ? classes.button_outline : classes.button,
-      size === 'sm' ? classes.button_sm : size === 'lg' ? classes.button_lg : '',
+      size === 'sm'
+        ? classes.button_sm : size === 'lg'
+          ? classes.button_lg : size === 'smv2'
+            ? classes.button_smv2 : '',
       loading ? classes.button_disabled : '', className || '',
     ];
     return (

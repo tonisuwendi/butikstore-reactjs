@@ -1,16 +1,19 @@
 import { useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 
+import BannerTitle from '../../components/BannerTitle/BannerTitle';
 import Layout from '../../components/Layout/Default';
 import OrderDetail from '../../components/Orders/OrderDetail';
-import Info from '../../components/UI/Info/Info';
-import useHttp from '../../hooks/use-http';
+import Menu from './Menu';
+import Button from '../../components/UI/Button/Button';
 import useURLQuery from '../../hooks/use-urlquery';
+import useHttp from '../../hooks/use-http';
 import endpoints from '../../lib/endpoints';
+import { breadcrumbs } from '../../data/banner';
 
-import classes from './Successfully.module.css';
+import classes from './Dashboard.module.css';
 
-const Successfully = () => {
+const DashboardOrderDetail = () => {
   const params = useParams();
   const history = useHistory();
   const idProduct = useURLQuery('id');
@@ -30,29 +33,31 @@ const Successfully = () => {
 
   useEffect(() => {
     if (!slugIsExist) {
-      history.push('/404');
+      history.push('/dashboard/orders');
     }
   }, [slugIsExist]);
 
   let contentWrapper;
+  if (isLoading) {
+    contentWrapper = <h3>LOADING...</h3>;
+  }
+
   if (!isLoading && !error && order && products) {
     contentWrapper = <OrderDetail order={order} products={products} />;
   }
 
   return (
-    <Layout title="Successfully">
+    <Layout title="Detail Order">
+      <BannerTitle title="DETAIL ORDER" breadcrumb={breadcrumbs} />
       <main className={classes.wrapper}>
-        <h2 className={classes.title}>
-          Thank you.
-          <br />
-          Your order has been received.
-        </h2>
-        <div className={classes.hline} />
-        <Info text="Kami akan menghubungi Anda melalui WhatsApp untuk mengirimkan panduan pembayaran." small />
+        <Menu menu="orders" />
+        <Link to="/dashboard/orders">
+          <Button title="See All Orders" />
+        </Link>
         {contentWrapper}
       </main>
     </Layout>
   );
 };
 
-export default Successfully;
+export default DashboardOrderDetail;

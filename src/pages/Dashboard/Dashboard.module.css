@@ -73,3 +73,10 @@
   font-size: 14px;
   margin-top: 10px;
 }
+
+.infoEmpty {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

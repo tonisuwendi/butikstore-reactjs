@@ -65,6 +65,8 @@ const LoginForm = ({
       />
       <Button
         submit
+        loading={isLoading}
+        disabled={!formIsValid || isLoading}
         title="Login"
         size="lg"
         className={buttonClasses.join(' ')}

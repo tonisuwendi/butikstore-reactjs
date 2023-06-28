@@ -27,3 +27,7 @@
   line-height: 22px;
   letter-spacing: 1px;
 }
+
+.copyright p > a {
+  color: black;
+}

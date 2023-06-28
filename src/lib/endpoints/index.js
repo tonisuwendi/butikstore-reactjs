@@ -1,9 +1,9 @@
-import common from './common';
+const domainURL = process.env.REACT_APP_DOMAIN_API;
 
-const PRODUCTS_API = `${common.DOMAIN_API}products/`;
-const CART_API = `${common.DOMAIN_API}cart/`;
-const ORDERS_API = `${common.DOMAIN_API}orders/`;
-const AUTH_API = `${common.DOMAIN_API}auth/`;
+const PRODUCTS_API = `${domainURL}products/`;
+const CART_API = `${domainURL}cart/`;
+const ORDERS_API = `${domainURL}orders/`;
+const AUTH_API = `${domainURL}auth/`;
 
 const endpoints = {
   getProductCat: (slug, query) => `${PRODUCTS_API}product-category/${slug}${query}`,

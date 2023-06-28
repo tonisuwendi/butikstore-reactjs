@@ -33,7 +33,12 @@ const HomePage = memo(() => {
   return (
     <Layout>
       <main>
-        <div className={classes.info}>Masih dalam tahap pengembangan</div>
+        <div className={classes.info}>
+          Website ini adalah replika inspiratif dari
+          {' '}
+          <a target="_blank" href="https://lookboutiquestore.com/" rel="noreferrer">lookboutiquestore.com</a>
+          .
+        </div>
         <Banner />
         <section className={classes.products}>
           <ProductContent

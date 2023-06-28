@@ -1,10 +1,15 @@
 .info {
   background-color: #555;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   padding: 14px 0;
   text-align: center;
   width: 100%;
+}
+
+.info > a {
+  color: white;
+  text-decoration: underline;
 }
 
 .products {

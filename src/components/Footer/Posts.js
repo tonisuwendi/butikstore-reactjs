@@ -8,7 +8,7 @@ const Posts = () => (
     <p className={footerClasses.title}>FOLLOW US</p>
     <div className={classes.images}>
       {posts.map((post) => (
-        <a href={post.url} key={post.id}>
+        <a href={post.url} target="_blank" key={post.id} rel="noreferrer">
           <img src={post.image} alt="postingan" />
         </a>
       ))}

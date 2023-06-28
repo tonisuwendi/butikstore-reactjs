@@ -1,33 +1,45 @@
 /* eslint-disable max-len */
 
+import {
+  shippingIcon,
+  qualityIcon,
+  returnBoxIcon,
+  newIcon,
+  instagramPost1,
+  instagramPost2,
+  instagramPost3,
+  instagramPost4,
+  instagramPost5,
+  instagramPost6,
+  instagramPost7,
+  instagramPost8,
+  instagramPost9,
+} from '../assets';
+
 export const benefits = [
   {
     id: 'b1',
     title: 'FREE SHIPPING',
     description: 'Minimal Purchase IDR 10.000',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/2019/11/icon-01-1.png',
+    image: shippingIcon,
   },
   {
     id: 'b2',
     title: 'HIGH QUALITY',
     description: 'Self Manufactured',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/2019/11/icon-05.png',
+    image: qualityIcon,
   },
   {
     id: 'b3',
     title: 'EXCHANGE',
     description: '7 Days Exchange',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/2019/11/icon-02.png',
+    image: returnBoxIcon,
   },
   {
     id: 'b4',
     title: 'NEW COLLECTION',
     description: 'Every 2 Weeks',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/2019/11/icon-04.png',
+    image: newIcon,
   },
 ];
 
@@ -95,56 +107,47 @@ export const helps = [
 export const posts = [
   {
     id: 'p1',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271667967_990433635236210_31240744341063064_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost1,
+    url: 'https://www.instagram.com/p/Ct-5uNzupWv/',
   },
   {
     id: 'p2',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271798949_635904701078257_1072357069365123167_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost2,
+    url: 'https://www.instagram.com/p/Ct-fGqoyaOm/',
   },
   {
     id: 'p3',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271611835_484812713079293_3935428438128018423_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost3,
+    url: 'https://www.instagram.com/p/Ct8yJjjvrcl/',
   },
   {
     id: 'p4',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271703688_463341402060962_1793467247353669719_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost4,
+    url: 'https://www.instagram.com/p/Ct8XNbIStXn/',
   },
   {
     id: 'p5',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271550239_1077896029675555_8026683204001901739_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost5,
+    url: 'https://www.instagram.com/p/Ct7-UEnSdND/',
   },
   {
     id: 'p6',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271684089_327976012570789_4242349189186255557_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost6,
+    url: 'https://www.instagram.com/p/Ct6Lfn4xtzS/',
   },
   {
     id: 'p7',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271608282_633541697889438_3362010548873452021_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost7,
+    url: 'https://www.instagram.com/p/Ct5W3ZGyYuu/',
   },
   {
     id: 'p8',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271520686_2730512653919912_7889529763037640304_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost8,
+    url: 'https://www.instagram.com/p/Ct3t0kRLVqT/',
   },
   {
     id: 'p9',
-    image:
-      'https://lookboutiquestore.com/wp-content/uploads/sb-instagram-feed-images/271558708_468393808032102_7501439172664917849_nlow.jpg',
-    url: 'https://www.instagram.com/lookboutiquestore/',
+    image: instagramPost9,
+    url: 'https://www.instagram.com/p/Ct3QCK1SeIF/',
   },
 ];

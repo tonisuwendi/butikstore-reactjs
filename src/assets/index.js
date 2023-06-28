@@ -1,0 +1,23 @@
+// images
+export { default as logoDarkImage } from './images/logo-dark.png';
+export { default as logoLightImage } from './images/logo-light.png';
+export { default as bannerImage1 } from './images/banner1.jpeg';
+export { default as bannerImage2 } from './images/banner2.jpg';
+export { default as bannerImage3 } from './images/banner3.jpg';
+export { default as featuredCategoryImage1 } from './images/featured-category-1.png';
+export { default as featuredCategoryImage2 } from './images/featured-category-2.png';
+export { default as featuredCategoryImage3 } from './images/featured-category-3.png';
+export { default as featuredCategoryImage4 } from './images/featured-category-4.png';
+export { default as shippingIcon } from './images/shipping.png';
+export { default as qualityIcon } from './images/quality.png';
+export { default as returnBoxIcon } from './images/return-box.png';
+export { default as newIcon } from './images/new.png';
+export { default as instagramPost1 } from './images/instagram-post-1.jpeg';
+export { default as instagramPost2 } from './images/instagram-post-2.jpeg';
+export { default as instagramPost3 } from './images/instagram-post-3.jpeg';
+export { default as instagramPost4 } from './images/instagram-post-4.jpeg';
+export { default as instagramPost5 } from './images/instagram-post-5.jpeg';
+export { default as instagramPost6 } from './images/instagram-post-6.jpeg';
+export { default as instagramPost7 } from './images/instagram-post-7.jpeg';
+export { default as instagramPost8 } from './images/instagram-post-8.jpeg';
+export { default as instagramPost9 } from './images/instagram-post-9.jpeg';

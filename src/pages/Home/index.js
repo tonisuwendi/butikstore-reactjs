@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { memo, useEffect } from 'react';
 
 import Banner from '../../components/Banner/Banner';
@@ -34,10 +35,10 @@ const HomePage = memo(() => {
     <Layout>
       <main>
         <div className={classes.info}>
-          Website ini adalah replika inspiratif dari
+          This is a personal practice replica inspired by
           {' '}
           <a target="_blank" href="https://lookboutiquestore.com/" rel="noreferrer">lookboutiquestore.com</a>
-          .
+          . It is not affiliated with the original brand. Product images and brand assets belong to their respective owners.
         </div>
         <Banner />
         <section className={classes.products}>

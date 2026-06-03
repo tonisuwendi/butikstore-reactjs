@@ -1,4 +1,4 @@
-const domainURL = process.env.REACT_APP_DOMAIN_API;
+const domainURL = process.env.REACT_APP_DOMAIN_API || 'http://mock.local/';
 
 const PRODUCTS_API = `${domainURL}products/`;
 const CART_API = `${domainURL}cart/`;

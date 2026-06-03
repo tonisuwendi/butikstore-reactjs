@@ -1,9 +1,5 @@
-import { useCallback, useReducer } from 'react';
-import axios from 'axios';
-
-const defaultConfig = {
-  headers: { 'Content-Type': 'application/json' },
-};
+import { useCallback, useReducer, useRef } from 'react';
+import { handleMockRequest } from '../mocks/mockApi';
 
 const initialState = {
   loading: false,
@@ -43,39 +39,36 @@ const httpReducer = (state = initialState, action) => {
 
 const useHttp = () => {
   const [httpState, dispatch] = useReducer(httpReducer, initialState);
+  const requestIdRef = useRef(0);
 
   const sendRequest = useCallback(async ({
-    method, url, headers, data: bodyDaya,
+    method, url, headers, data: bodyData,
   }) => {
+    const requestId = requestIdRef.current + 1;
+    requestIdRef.current = requestId;
     dispatch({ type: 'SEND' });
     try {
-      const response = await axios({
+      const response = await handleMockRequest({
         url,
         method: method || 'GET',
-        headers: headers || defaultConfig.headers,
-        data: bodyDaya || null,
-        timeout: 10000,
+        headers: headers || {},
+        data: bodyData || null,
       });
-      const { success, data } = response.data;
-      if (response.status === 200 && success) {
+      if (requestId !== requestIdRef.current) return;
+
+      const { success, data, message } = response.data;
+      if (response.data.status === 200 && success) {
         dispatch({ type: 'SUCCESS', responseData: data });
       } else {
         dispatch({
           type: 'ERROR',
-          errorMessage: response.data.message || 'Something went wrong!',
-          slugIsExist: data?.slugIsExist || true,
+          errorMessage: message || 'Something went wrong!',
+          slugIsExist: data?.slugIsExist !== false,
         });
       }
     } catch (err) {
-      let errorMessage;
-      if (err.message === 'Network Error') {
-        errorMessage = 'Could not make a request to the server, please try again.';
-      } else if (err.message.includes('timeout')) {
-        errorMessage = 'The server is not responding, please try again.';
-      } else {
-        errorMessage = 'Something went wrong!';
-      }
-      dispatch({ type: 'ERROR', errorMessage });
+      if (requestId !== requestIdRef.current) return;
+      dispatch({ type: 'ERROR', errorMessage: 'Something went wrong!' });
     }
   }, []);
 

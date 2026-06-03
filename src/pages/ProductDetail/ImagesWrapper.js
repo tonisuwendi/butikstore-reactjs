@@ -1,7 +1,13 @@
 import classes from './ProductDetail.module.css';
 
+const getImageAt = (imageData, index) => {
+  if (!imageData) return null;
+  if (Array.isArray(imageData)) return imageData[index] || null;
+  return imageData.split('^')[index] || null;
+};
+
 const ImagesWrapper = ({ images }) => {
-  const image = (index) => images.split('^')[index];
+  const image = (index) => getImageAt(images, index);
 
   return (
     <div className={classes.images_wrapper}>

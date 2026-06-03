@@ -47,6 +47,7 @@ const LoginForm = ({
 
   return (
     <form onSubmit={loginHandler}>
+      <p className={classes.info}>You can use any username and password to log in.</p>
       <Input
         id="username"
         label="Username *"

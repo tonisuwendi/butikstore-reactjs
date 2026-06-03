@@ -33,3 +33,11 @@
 .buttonInActive:hover {
   opacity: 0.6;
 }
+
+.info {
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-left: 4px solid #ccc;
+}
